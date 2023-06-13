@@ -1,0 +1,14 @@
+# Download the helper library from https://www.twilio.com/docs/python/install
+import os
+import config
+
+from twilio.rest import Client
+# Set environment variables for your credentials
+# Read more at http://twil.io/secure
+client = Client(config.ACCOUNT_SID, config.AUTH_TOKEN)
+message = client.messages.create(
+  body="Hello from Twilio",
+  from_="+18556083113",
+  to="+13014017737"
+)
+print(message.sid)
