@@ -1,15 +1,7 @@
-import openai
-import config
-
-openai.api_key = config.SECRET_KEY
-def query(prompt):
-    message = [{"role": "user", "content": prompt}]
-
-    chat = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=message)
-    reply = chat.choices[0].message.content
-    return reply
+from ChatGPT import chatgpt#ChatGPT folder
+import Twilio #Twilio folder
 
 while(1):
     question = input("Type your question here: ")
-    response = query(question)
+    response = chatgpt.query(question)
     print("ChatGPT response: ", response)
