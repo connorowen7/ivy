@@ -1,7 +1,7 @@
 import openai
+import config
 
-openai.api_key = "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"
-
+openai.api_key = config.SECRET_KEY
 def query(prompt):
     message = [{"role": "user", "content": prompt}]
 
