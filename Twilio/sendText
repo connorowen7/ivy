@@ -5,10 +5,11 @@ import config
 from twilio.rest import Client
 # Set environment variables for your credentials
 # Read more at http://twil.io/secure
+
 client = Client(config.ACCOUNT_SID, config.AUTH_TOKEN)
 message = client.messages.create(
-  body="Hello from Twilio",
+  body="Sup Dawg",
   from_="+18556083113",
-  to="+13014017737"
+  to="+12404095848"
 )
 print(message.sid)
